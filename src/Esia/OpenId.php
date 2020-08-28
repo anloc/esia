@@ -81,6 +81,16 @@ class OpenId
         return $this->config;
     }
 
+    public function getSigner(): SignerInterface
+    {
+        return $this->signer;
+    }
+
+    public function getClient(): ClientInterface
+    {
+        return $this->client;
+    }
+
     /**
      * Return an url for authentication
      *
