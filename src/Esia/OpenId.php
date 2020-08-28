@@ -311,7 +311,7 @@ class OpenId
      * @return array
      * @throws AbstractEsiaException
      */
-    private function sendRequest(RequestInterface $request): array
+    protected function sendRequest(RequestInterface $request): array
     {
         try {
             if ($this->config->getToken()) {
@@ -356,7 +356,7 @@ class OpenId
     /**
      * @return string
      */
-    private function getTimeStamp(): string
+    protected function getTimeStamp(): string
     {
         return date('Y.m.d H:i:s O');
     }
@@ -368,7 +368,7 @@ class OpenId
      * @return string
      * @throws SignFailException
      */
-    private function buildState(): string
+    protected function buildState(): string
     {
         try {
             return sprintf(
@@ -393,7 +393,7 @@ class OpenId
      * @param string $string
      * @return string
      */
-    private function base64UrlSafeDecode($string): string
+    protected function base64UrlSafeDecode($string): string
     {
         $base64 = strtr($string, '-_', '+/');
 
